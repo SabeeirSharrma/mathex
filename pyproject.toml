@@ -1,0 +1,9 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.backends.legacy:build"
+
+[project]
+name = "mathex"
+version = "0.1.0"
+description = "A pure Python mathematics library"
+requires-python = ">=3.8"

@@ -1,5 +1,19 @@
 from .matrix import Matrix
 
+__version__ = "0.1.0"
+
+__all__ = [
+    "Matrix",
+    "det",
+    "trace",
+    "transpose",
+    "inverse",
+    "hadamard",
+    "identity",
+    "zeros",
+    "ones",
+]
+
 def _ensure_matrix(data):
     """Helper to convert raw list of lists to Matrix if needed."""
     if isinstance(data, Matrix):
@@ -17,6 +31,14 @@ def transpose(data):
 def inverse(data):
     """Returns the inverse of the given matrix or data."""
     return _ensure_matrix(data).inverse()
+
+def hadamard(a, b):
+    """Returns the element-wise (Hadamard) product of two matrices or list-of-lists."""
+    return _ensure_matrix(a).hadamard(_ensure_matrix(b))
+
+def trace(data):
+    """Returns the trace (sum of main diagonal) of the given matrix or data."""
+    return _ensure_matrix(data).trace()
 
 def identity(n):
     """Returns an n x n identity matrix."""
